@@ -1,11 +1,25 @@
 :root {
     --background-color: #111111;
     --sidebar-color: #222222;
+    --second-color: #333333;
     --font-color: #ffffff;
 
     --line-color: #000000;
     --line-width: 3px;
     --calc-subline-width: calc(var(--line-width) / 2);
+}
+
+@font-face {
+    font-family: titi;
+    src: url(../import/fonts/TitilliumWeb-Light.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../import/fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: philosopher;
+    src: url(../import/fonts/Philosopher-Bold.ttf);
 }
 
 * {
@@ -24,7 +38,7 @@
     left: 0px;
     max-height: 100%;
     background-color: var(--sidebar-color);
-    width: 7.5vw;
+    width: 75px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -32,10 +46,12 @@
 
 .position {
     height: calc(50vh - 40px);
-    width: 2.5vw;
+    width: 25px;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    font-size: 2.5vw;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-family: 'philosopher';
     color: var(--font-color);
     margin-top: 40px;
     overflow: hidden;
@@ -55,39 +71,42 @@
     margin-bottom: 40px;
 }
 
-.main-page {
-    margin-left: 7.5vw;
+.content > div {
+    padding: 0 100px 0 175px;
+}
+
+.presentation {
     display: flex;
-    width: 91vw;
     height: 100vh;
     align-items: center;
 }
 
 .image {
     border-radius: 50%;
-    width: 40vw;
-    height: 40vw;
-    margin-left: 2.5vw;
+    width: 30vw;
+    height: 30vw;
 }
 
 .information {
     display: flex;
+    margin-left: 20px;
+    width: calc(50vw - 20px);
     flex-direction: column;
-    width: 50vw;
     color: white;
 }
 .title {
     font-size: 5vw;
     text-align: center;
     margin: 50px;
+    font-family: 'titi';
 }
 .text {
     font-size: 2vw;
     text-align: justify;
+    font-family: 'roboto';
     background-color: var(--sidebar-color);
-    margin: 10%;
     height: 80%;
-    width: calc(80% - 15px);
+    width: calc(100% - 20px);
     padding: 10px;
     border-radius: 5px;
 }
@@ -95,11 +114,9 @@
 
 
 
-.timeline {
-    height: 100vh;
-    width: calc(91vw - 2px);
-    margin-left: 7.5vw;
-    border: 1px solid red;
+div.timeline {
+    padding-left: 100px;
+    margin-left: 75px;
     background: linear-gradient(to right,
                 transparent calc(50% - var(--calc-subline-width)),
                 var(--line-color)     calc(50% - var(--calc-subline-width)),
@@ -107,15 +124,12 @@
                 transparent calc(50% + var(--calc-subline-width))
     );
     color: white;
+    background-color: var(--sidebar-color);
+    border-radius: 5px;
 }
 
 .timeline > div {
     padding: 10px;
-}
-.timeline > div::before {
-    content: "●";
-    height: 0;
-    display: block;
 }
 .timeline > div:nth-child(odd) {
     margin-right: 50%;
@@ -129,4 +143,46 @@
 }
 .timeline > div:nth-child(even)::before {
     margin-left: -15px;
+}
+
+.project {
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+}
+
+.left {
+    margin-inline-start: 30px;
+}
+.right {
+    margin-inline-end: 30px;
+}
+/* .left {
+    margin-inline-start: 30px;
+    width: calc(45% - 30px);
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+}
+.right {
+    margin-inline-end: 30px;
+    width: calc(45% - 30px);
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+} */
+.project-title {
+    padding: 0 3px;
+    display: block;
+    width: max-content;
+    background-color: var(--second-color);
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-radius: 0;
+}
+.project-description {
+    padding: 10px;
 }
