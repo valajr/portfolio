@@ -1,10 +1,10 @@
 :root {
     --background-color: #111111;
-    --sidebar-color: #222222;
-    --second-color: #333333;
+    --medium-color: #222222;
     --font-color: #ffffff;
+    --line-color: #282828;
 
-    --line-color: #000000;
+    --sidebar-color: #222222;
     --line-width: 3px;
     --calc-subline-width: calc(var(--line-width) / 2);
 }
@@ -42,6 +42,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+    border-right: 3px solid var(--line-color);
 }
 
 .position {
@@ -66,7 +67,8 @@
     align-items: center;
 }
 
-.social-media > img {
+.social-media a img {
+    display: flex;
     width: 40%;
     margin-bottom: 40px;
 }
@@ -92,7 +94,7 @@
     margin-left: 20px;
     width: calc(50vw - 20px);
     flex-direction: column;
-    color: white;
+    color: var(--font-color);
 }
 .title {
     font-size: 5vw;
@@ -104,7 +106,7 @@
     font-size: 2vw;
     text-align: justify;
     font-family: 'roboto';
-    background-color: var(--sidebar-color);
+    background-color: var(--medium-color);
     height: 80%;
     width: calc(100% - 20px);
     padding: 10px;
@@ -116,16 +118,15 @@
 
 div.timeline {
     padding-left: 100px;
-    margin-left: 75px;
+    margin: 0 0 30px 75px;
     background: linear-gradient(to right,
                 transparent calc(50% - var(--calc-subline-width)),
                 var(--line-color)     calc(50% - var(--calc-subline-width)),
                 var(--line-color)     calc(50% + var(--calc-subline-width)),
                 transparent calc(50% + var(--calc-subline-width))
     );
-    color: white;
-    background-color: var(--sidebar-color);
-    border-radius: 5px;
+    color: var(--font-color);
+    background-color: var(--medium-color);
 }
 
 .timeline > div {
@@ -143,6 +144,23 @@ div.timeline {
 }
 .timeline > div:nth-child(even)::before {
     margin-left: -15px;
+}
+
+.date-left {
+    margin-right: -15px;
+    font-family: 'titi';
+    font-size: 1rem;
+}
+.date-left::after {
+    content: "    ●";
+}
+.date-right {
+    margin-left: -15px;
+    font-family: 'titi';
+    font-size: 1rem;
+}
+.date-right::before {
+    content: "●    ";
 }
 
 .project {
@@ -175,7 +193,8 @@ div.timeline {
     padding: 0 3px;
     display: block;
     width: max-content;
-    background-color: var(--second-color);
+    font-family: 'philosopher';
+    font-size: 1.2rem;
     padding-inline-start: 2px;
     padding-inline-end: 2px;
     border-width: initial;
@@ -185,4 +204,28 @@ div.timeline {
 }
 .project-description {
     padding: 10px;
+    margin-bottom: 10px;
+    display: none;
+    font-family: 'roboto';
+    font-size: 1rem;
+    text-align: justify;
+}
+.project-description a {
+  text-decoration: none;
+}
+.project-description a:hover {
+  text-decoration: underline;
+}
+.project-description a img {
+    width: 20px;
+    margin-top: 40px;
+}
+
+footer {
+    color: var(--font-color);
+    font-size: 1rem;
+    text-align: center;
+    padding: 30px;
+    font-family: monospace;
+    letter-spacing: -1px;
 }

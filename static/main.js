@@ -1,8 +1,3 @@
-const INDEX = {
-    'presentation': 0,
-    'timeline': 1
-};
-
 const POSITION = ['presentation', 'timeline'];
 
 function verifyPosition() {
@@ -13,13 +8,41 @@ function verifyPosition() {
 
     let new_index = null;
     if(atual_position > vh/2)
-        new_index = INDEX[atual] - 1;
+        new_index = POSITION.indexOf(atual) - 1;
     else if(atual_position < -vh/2)
-        new_index = INDEX[atual] + 1;
+        new_index = POSITION.indexOf(atual) + 1;
 
-    if(new_index != null) {
+    if(new_index != null)
         position.innerHTML = POSITION[new_index].replace(/-/g, ' ');
-        console.log(new_index);
+}
+
+
+async function getPinnedRepos(f) {
+    await fetch("https://gh-pinned-repos.egoist.dev/?username=valajr")
+    .then((res) => res.json()).then((data) => {
+        return f(data);
+    });
+}
+
+// getPinnedRepos((repos) => {
+//     let plist = document.getElementById("pinned-projects");
+//     plist.innerHTML = "";
+//     for(let r in repos) {
+//         let rep = repos[r];
+//         plist.appendChild(buildProjectItem(rep.repo, rep.description, rep.link, rep.stars));
+//     }
+// });
+
+function showProject(id) {
+    let projects = document.getElementsByClassName('project-description');
+    let showed = document.getElementById(id);
+    if(showed.style.display === 'block')
+        showed.style.display = 'none';
+    else {
+        for(let i = 0; i < projects.length; i++) {
+            projects[i].style.display = 'none';
+        }
+        showed.style.display = 'block';
     }
 }
 

@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Luis Vala's Porfolio</title>
+    <title>Luis Vala's Portfolio</title>
 
     <script defer src="static/main.js"></script>
     <link rel="stylesheet" href="static/style.css">
@@ -11,10 +11,19 @@
         <div class="sidebar">
             <span class="position">presentation</span>
             <div class="social-media">
-                <img src="import/imgs/git.png" alt="GitHub Logo">
-                <img src="import/imgs/linkedin.png" alt="LinkedIn Logo">
-                <img src="import/imgs/email.png" alt="e-mail Logo">
-                <img src="import/imgs/insta.png" alt="Instagram Logo">
+                <a href="https://github.com/valajr" target="_blank">
+                    <img src="import/imgs/git.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/valajr/" target="_blank">
+                    <img src="import/imgs/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:luis_vala_junior@hotmail.com">
+                    <img src="import/imgs/mail.png" alt="Mail">
+                </a>
+                <a href="import/curriculum.pdf" target="_blank">
+                    <img src="import/imgs/curriculum.png" alt="Curriculum">
+                </a>
+                
             </div>
         </div>
         <div class="content">
@@ -22,45 +31,127 @@
                 <img class="image" src="import/imgs/me.png" alt="Luis Vala Junior's photo">
                 <div class="information">
                     <span class="title">Luis Vala Junior</span>
-                    <span class="text">Here goes the bio.</span>
+                    <span class="text">Graduation student in Information Systems at UTFPR. I am looking for 
+                        an opportunity to start my career in the area aiming at my professional growth and also 
+                        contributing to the growth of the company.</span>
                 </div>
             </div>
             <div class="timeline">
                 <div>
-                    <fieldset class="project left">
-                        <legend class="project-title left">Project 1</legend>
-                        <span class="project-description">
-                            Something about the project
-                            even more
+                    <span class="date-left">December</span>
+                    <fieldset class="project" onclick="showProject('portfolio')">
+                        <legend class="project-title left">Portfolio</legend>
+                        <span id="portfolio" class="project-description">
+                            The project of this portfolio.
+                            <div class="links">
+                                <a href="https://trello.com/b/Dq7lmiNi" target="_blank">
+                                    <img src="import/imgs/trello.png" alt="Trello">
+                                </a>
+                                <a href="https://github.com/valajr/portfolio" target="_blank">
+                                    <img src="import/imgs/git.png" alt="GitHub">
+                                </a>
+                            </div>
                         </span>
                     </fieldset>
                 </div>
                 <div>
-                    <fieldset class="project right">
-                        <legend class="project-title right">Project 2</legend>
-                        <span class="project-description">
-                            Something about the project
-                        </span>
-                    </fieldset>                    
-                </div>
-                <div>
-                    <fieldset class="project left">
-                        <legend class="project-title left">Project 3</legend>
-                        <span class="project-description">
-                            Something about the project
+                    <span class="date-right">November</span>
+                    <fieldset class="project" onclick="showProject('decamatch')">
+                        <legend class="project-title right">Decamatch</legend>
+                        <span id="decamatch" class="project-description">
+                            A match-3 game with a little turn-based battle. Inspired on 
+                            <a href="https://store.steampowered.com/app/1296610/Peglin/">Peglin</a>, the objective 
+                            of the game is to defeat the other robot using combinations of gears of the board.
+                            <div class="links">
+                                <a href="https://trello.com/b/euOHh2Xw" target="_blank">
+                                    <img src="import/imgs/trello.png" alt="Trello">
+                                </a>
+                                <a href="https://valajr.github.io/deca-match/" target="_blank">
+                                    <img src="import/imgs/git.png" alt="GitHub">
+                                </a>
+                            </div>
                         </span>
                     </fieldset>
                 </div>
                 <div>
-                    <fieldset class="project right">
-                        <legend class="project-title right">Project 4</legend>
-                        <span class="project-description">
-                            Something about the project
-                            even more
+                    <span class="date-left">October</span>
+                    <fieldset class="project" onclick="showProject('anime')">
+                        <legend class="project-title left">Anime Theater</legend>
+                        <span id="anime" class="project-description">
+                            A site for simulate a cinema experience with animes, showing some anime information 
+                            and a cinema session with randomly occupied chairs; made using an 
+                            <a href="https://github.com/consumet/api.consumet.org">API</a> to get updated data and 
+                            a previous personal project of <a href="https://github.com/valajr/BlueDog">framework</a>.
+                            <div class="links">
+                                <a href="https://trello.com/b/PbWSl7hg" target="_blank">
+                                    <img src="import/imgs/trello.png" alt="Trello">
+                                </a>
+                                <a href="https://valajr.github.io/Anime-Theater/" target="_blank">
+                                    <img src="import/imgs/git.png" alt="GitHub">
+                                </a>
+                            </div>
+                        </span>
+                    </fieldset>
+                </div>
+                <div>
+                    <span class="date-right">September</span>
+                    <fieldset class="project" onclick="showProject('downfall')">
+                        <legend class="project-title right">Downfall Game</legend>
+                        <span id="downfall" class="project-description">
+                            A cardgame using a <a href="https://github.com/valajr/Downfall-Libs/">lib</a> of a 
+                            previous personal project. The objective is to reach the final boss and defeat him, the 
+                            stages are on a randomly generated tower with levels and may have five types of rooms.
+                            <div class="links">
+                                <a href="https://trello.com/b/IgHx3Czw" target="_blank">
+                                    <img src="import/imgs/trello.png" alt="Trello">
+                                </a>
+                                <a href="https://valajr.github.io/Downfall-Game/" target="_blank">
+                                    <img src="import/imgs/git.png" alt="GitHub">
+                                </a>
+                            </div>
+                        </span>
+                    </fieldset>
+                </div>
+                <div>
+                    <span class="date-left">August</span>
+                    <fieldset class="project" onclick="showProject('pokedex')">
+                        <legend class="project-title left">Pokedex</legend>
+                        <span id="pokedex" class="project-description">
+                            A pokedex from <a href="https://www.pokemon.com/br/">Pokemon</a> presented as a 
+                            hunter's journal of <a href="https://store.steampowered.com/app/367520/Hollow_Knight/">
+                            Hollow Knight</a>. This project uses an <a href="https://pokeapi.co/">API</a> to get 
+                            data and has a cache system to run faster.
+                            <div class="links">
+                                <a href="https://trello.com/b/WYEpTLiE" target="_blank">
+                                    <img src="import/imgs/trello.png" alt="Trello">
+                                </a>
+                                <a href="https://valajr.github.io/pokedex/" target="_blank">
+                                    <img src="import/imgs/git.png" alt="GitHub">
+                                </a>
+                            </div>
+                        </span>
+                    </fieldset>
+                </div>
+                <div>
+                    <span class="date-right">July</span>
+                    <fieldset class="project" onclick="showProject('chess')">
+                        <legend class="project-title right">Chess</legend>
+                        <span id="chess" class="project-description">
+                            Normal chess with a little of RPG systems. This was my first project in front-end; was made
+                            with the assistance and guidance of a friend.
+                            <div class="links">
+                                <a href="https://trello.com/b/ht7BQyD1" target="_blank">
+                                    <img src="import/imgs/trello.png" alt="Trello">
+                                </a>
+                                <a href="https://valajr.github.io/chess/" target="_blank">
+                                    <img src="import/imgs/git.png" alt="GitHub">
+                                </a>
+                            </div>
                         </span>
                     </fieldset>
                 </div>
             </div>
+            <footer>Portfolio designed by Luis Vala Junior - 2022</footer>
         </div>
     </div>
 </body>
