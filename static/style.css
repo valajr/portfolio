@@ -4,6 +4,8 @@
     --font-color: #ffffff;
     --line-color: #282828;
 
+    --legend-border-color: #222222;
+
     --sidebar-color: #222222;
     --line-width: 3px;
     --calc-subline-width: calc(var(--line-width) / 2);
@@ -46,21 +48,22 @@
 }
 
 .position {
-    height: calc(50vh - 40px);
+    height: calc(60vh - 40px);
     width: 25px;
     writing-mode: vertical-rl;
     text-orientation: upright;
     text-transform: capitalize;
     font-size: 25px;
-    font-family: 'philosopher';
+    font-family: monospace;
     color: var(--font-color);
     margin-top: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
+    letter-spacing: -1;
 }
 
 .social-media {
-    height: 50vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -70,7 +73,7 @@
 .social-media a img {
     display: flex;
     width: 40%;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .content > div {
@@ -165,8 +168,14 @@ div.timeline {
 
 .project {
     background-color: var(--background-color);
-    border: none;
+    border: var(--line-width) solid var(--medium-color);
     border-radius: 5px;
+}
+
+.project:hover {
+    cursor: pointer;
+    --legend-border-color: var(--line-color);
+    border: var(--line-width) solid var(--line-color);
 }
 
 .left {
@@ -195,12 +204,10 @@ div.timeline {
     width: max-content;
     font-family: 'philosopher';
     font-size: 1.2rem;
-    padding-inline-start: 2px;
-    padding-inline-end: 2px;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-radius: 0;
+    padding: 5px;
+    border: var(--line-width) solid var(--legend-border-color);
+    border-radius: 10px;
+    background-color: var(--background-color);
 }
 .project-description {
     padding: 10px;
