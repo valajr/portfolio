@@ -1,4 +1,4 @@
-const POSITION = ['presentation', 'timeline'];
+const POSITION = ['presentation', 'skills', 'timeline'];
 
 function verifyPosition() {
     const vh = window.innerHeight;
@@ -12,8 +12,14 @@ function verifyPosition() {
     else if(atual_position < -vh/2)
         new_index = POSITION.indexOf(atual) + 1;
 
-    if(new_index != null)
-        position.innerHTML = POSITION[new_index].replace(/-/g, ' ');
+    if(new_index != null) {
+        position.classList.remove('position');
+        void position.offsetWidth;
+        position.classList.add('position');
+        setTimeout(() => {
+            position.innerHTML = POSITION[new_index].replace(/-/g, ' ');
+        }, 200);
+    }
 }
 
 
@@ -36,13 +42,20 @@ async function getPinnedRepos(f) {
 function showProject(id) {
     let projects = document.getElementsByClassName('project-description');
     let showed = document.getElementById(id);
-    if(showed.style.display === 'block')
+    let parent = showed.parentElement.parentElement;
+    if(showed.style.display === 'block') {
         showed.style.display = 'none';
+        parent.classList.remove('showed');
+    }
     else {
         for(let i = 0; i < projects.length; i++) {
             projects[i].style.display = 'none';
+            projects[i].parentElement.parentElement.classList.remove('showed');
         }
         showed.style.display = 'block';
+        parent.classList.add('showed');
+        if(id !== 'chess')
+            parent.style.setProperty('--element-height', `-${parent.offsetHeight - 138.33}px`);
     }
 }
 
