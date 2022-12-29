@@ -54,8 +54,10 @@ function showProject(id) {
         }
         showed.style.display = 'block';
         parent.classList.add('showed');
-        if(id !== 'chess')
-            parent.style.setProperty('--element-height', `-${parent.offsetHeight - 138.33}px`);
+        if(id !== 'chess') {
+            let comparative = document.getElementById('chess').parentElement.parentElement;
+            parent.style.setProperty('--element-height', `-${parent.offsetHeight - comparative.offsetHeight}px`);
+        }
     }
 }
 
