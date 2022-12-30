@@ -16,9 +16,7 @@ function verifyPosition() {
         position.classList.remove('position');
         void position.offsetWidth;
         position.classList.add('position');
-        setTimeout(() => {
-            position.innerHTML = POSITION[new_index].replace(/-/g, ' ');
-        }, 200);
+        setTimeout(() => {position.innerHTML = POSITION[new_index].replace(/-/g, ' ');}, 200);
     }
 }
 
@@ -40,24 +38,31 @@ async function getPinnedRepos(f) {
 // });
 
 function showProject(id) {
-    let projects = document.getElementsByClassName('project-description');
+    let projects = document.getElementsByClassName('project');
     let showed = document.getElementById(id);
-    let parent = showed.parentElement.parentElement;
-    if(showed.style.display === 'block') {
-        showed.style.display = 'none';
-        parent.classList.remove('showed');
-    }
+    // let parent = showed.parentElement.parentElement;
+    // if(showed.style.display === 'block') {
+    //     showed.style.display = 'none';
+    //     parent.classList.remove('showed');
+    // }
+    // else {
+    //     for(let i = 0; i < projects.length; i++) {
+    //         projects[i].style.display = 'none';
+    //         projects[i].parentElement.parentElement.classList.remove('showed');
+    //     }
+    //     showed.style.display = 'block';
+    //     parent.classList.add('showed');
+    //     if(id !== 'chess') {
+    //         let comparative = document.getElementById('chess').parentElement.parentElement;
+    //         parent.style.setProperty('--element-height', `-${parent.offsetHeight - comparative.offsetHeight}px`);
+    //     }
+    // }
+    if(showed.classList.contains('showed')) 
+        showed.classList.remove('showed');
     else {
-        for(let i = 0; i < projects.length; i++) {
-            projects[i].style.display = 'none';
-            projects[i].parentElement.parentElement.classList.remove('showed');
-        }
-        showed.style.display = 'block';
-        parent.classList.add('showed');
-        if(id !== 'chess') {
-            let comparative = document.getElementById('chess').parentElement.parentElement;
-            parent.style.setProperty('--element-height', `-${parent.offsetHeight - comparative.offsetHeight}px`);
-        }
+        for(let i = 0; i < projects.length; i++) 
+            projects[i].classList.remove('showed');
+        showed.classList.add('showed');
     }
 }
 

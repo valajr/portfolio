@@ -37,6 +37,15 @@
     100% {color: white;}
 }
 
+@keyframes showProject {
+    from {
+        height: 0;
+    }
+    to {
+
+    }
+}
+
 * {
     margin: 0 auto;
     padding: 0;
@@ -133,12 +142,12 @@
 
 .skills {
     background-color: var(--medium-color);
-    height: 600px;
     margin: 100px 0;
 }
 .skill-group {
     display: flex;
     flex-direction: column;
+    padding: 80px 0;
 }
 .skill-group > span {
     margin: 30px;
@@ -146,12 +155,18 @@
     font-family: 'titi';
     font-size: 35px;
 }
-.skill-imgs > img {
-    width: 100px;
-    height: auto;
-    background-color: white;
+.test {
+    background-color: var(--background-color);
     padding: 30px;
     border-radius: 30px;
+    display: inline-flex;
+    margin: 0 30px;
+}
+.test > img {
+    width: 100px;
+    height: auto;
+    -webkit-filter: drop-shadow(0px 7px 0px #000000) brightness(1.5);
+    filter: drop-shadow(0px 7px 0px #000000) brightness(1.5);
 }
 
 
@@ -168,7 +183,7 @@ div.timeline {
     background-color: var(--background-color);
 }
 .timeline > div {
-    padding: 40px 10px;
+    padding: 10px;
 }
 .timeline > div:nth-child(odd) {
     margin-right: 50%;
@@ -183,8 +198,9 @@ div.timeline {
 .timeline > div:nth-child(even)::before {
     margin-left: -15px;
 }
-.showed {
-    margin-bottom: var(--element-height);
+.project.showed {
+    /* margin-bottom: var(--element-height); */
+    max-height: 600px;
 }
 
 .date-left {
@@ -208,6 +224,9 @@ div.timeline {
     background-color: var(--medium-color);
     border: var(--line-width) solid var(--medium-color);
     border-radius: 5px;
+    transition: max-height 0.4s ease;
+    max-height: 0;
+    overflow: hidden;
 }
 .project:hover {
     cursor: pointer;
@@ -249,7 +268,6 @@ div.timeline {
 .project-description {
     padding: 10px;
     margin-bottom: 10px;
-    display: none;
     font-family: 'roboto';
     font-size: 1rem;
     text-align: justify;
