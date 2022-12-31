@@ -423,5 +423,11 @@ footer {
     }
     .project-description {
         font-size: 25px;
+        margin: 0;
+        padding: 30px;
+    }
+    .project-description a img {
+        width: 40px;
+        margin-top: 60px;
     }
 }
