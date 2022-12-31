@@ -365,6 +365,7 @@ footer {
         width: 100%;
         flex-direction: row;
         z-index: 10;
+        border-bottom: 10px solid var(--line-color);
     }
     .position {
         width: calc(60vw - 100px);
@@ -414,6 +415,9 @@ footer {
 
     div.timeline {
         margin: 100px 0;
+    }
+    .timeline > div {
+        margin-top: 30px;
     }
     .date-left, .date-right {
         font-size: 25px;
