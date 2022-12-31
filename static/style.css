@@ -3,6 +3,7 @@
     --medium-color: #222222;
     --font-color: #ffffff;
     --line-color: #282828;
+    --light-gray: #ccc;
 
     --legend-border-color: #222222;
 
@@ -123,46 +124,101 @@
     color: var(--font-color);
 }
 .title {
-    font-size: 5vw;
+    font-size: 50px;
     text-align: center;
     margin: 50px;
     font-family: 'titi';
 }
 .text {
-    font-size: 2vw;
+    font-size: 20px;
     text-align: justify;
     font-family: 'roboto';
-    background-color: var(--medium-color);
-    height: 80%;
-    width: calc(100% - 20px);
+    background-color: var(--background-color);
+    height: 125px;
+    width: 390px;
     padding: 10px;
     border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+}
+.blocks {
+    position: relative;
+    width: 410px;
+    height: 145px;
+    top: 0;
+}
+.blocks:before, .blocks:after {
+    position: absolute;
+    z-index: 0;
+    content: "";
+    display: inline-block;
+    height: 50px;
+    width: 120px;
+    background-color: var(--medium-color);
+    border-radius: 5px;
+}
+.blocks:before {
+    top: -20px;
+    left: -15px;
+}
+.blocks:after {
+    bottom: -20px;
+    right: -20px;
+    width: 250px;
+}
+/* .block-before {
+    content: "";
+    display: inline-block;
+    height: 80px;
+    width: 120px;
+    margin-top: 14%;
+    margin-left: 0%;
+    background-color: red;
+    z-index: 0;
+    position: absolute;
 }
 
+.block-after {
+    content: "";
+    display: inline-block;
+    height: 50px;
+    width: 120px;
+    margin-top: 30%;
+    margin-left: 34%;
+    background-color: red;
+    z-index: 0;
+    position: absolute;
+}   */
 
-.skills {
+div.skills {
     background-color: var(--medium-color);
     margin: 100px 0;
+    padding-bottom: 40px;
 }
 .skill-group {
     display: flex;
     flex-direction: column;
-    padding: 80px 0;
+    padding: 20px 0;
 }
 .skill-group > span {
-    margin: 30px;
+    margin: 0 30px 30px;
     color: var(--font-color);
     font-family: 'titi';
     font-size: 35px;
 }
-.test {
+.skill-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.skill {
     background-color: var(--background-color);
     padding: 30px;
     border-radius: 30px;
     display: inline-flex;
-    margin: 0 30px;
 }
-.test > img {
+.skill > img {
     width: 100px;
     height: auto;
     -webkit-filter: drop-shadow(0px 7px 0px #000000) brightness(1.5);
@@ -199,7 +255,7 @@ div.timeline {
     margin-left: -15px;
 }
 .project.showed {
-    /* margin-bottom: var(--element-height); */
+    margin-bottom: var(--element-height);
     max-height: 600px;
 }
 
@@ -224,7 +280,7 @@ div.timeline {
     background-color: var(--medium-color);
     border: var(--line-width) solid var(--medium-color);
     border-radius: 5px;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.4s;
     max-height: 0;
     overflow: hidden;
 }
@@ -266,23 +322,33 @@ div.timeline {
     background-color: var(--legend-border-color);
 }
 .project-description {
+    display: block;
     padding: 10px;
     margin-bottom: 10px;
     font-family: 'roboto';
     font-size: 1rem;
     text-align: justify;
 }
-.project-description a {
+/* .project-description a {
   text-decoration: none;
 }
 .project-description a:hover {
   text-decoration: underline;
+} */
+.project-description a {
+    text-decoration: none;
 }
 .project-description a img {
     width: 20px;
     margin-top: 40px;
 }
 
+a {
+    color: var(--light-gray);
+}
+a:hover {
+    font-weight: bold;
+}
 
 footer {
     color: var(--font-color);
@@ -291,4 +357,14 @@ footer {
     padding: 30px;
     font-family: monospace;
     letter-spacing: -1px;
+}
+
+@media screen and (max-width:1180px) {
+    .presentation {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .information {
+        width: 100%;
+    }
 }

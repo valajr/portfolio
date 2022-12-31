@@ -63,6 +63,10 @@ function showProject(id) {
         for(let i = 0; i < projects.length; i++) 
             projects[i].classList.remove('showed');
         showed.classList.add('showed');
+        if(id !== 'chess') {
+            let comparative = document.getElementById('chess').parentElement;
+            showed.style.setProperty('--element-height', `${showed.offsetHeight - 115}px`);
+        }
     }
 }
 
