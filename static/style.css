@@ -134,7 +134,7 @@
     text-align: justify;
     font-family: 'roboto';
     background-color: var(--background-color);
-    height: 125px;
+    height: fit-content;
     width: 390px;
     padding: 10px;
     border-radius: 5px;
@@ -201,7 +201,7 @@ div.skills {
     padding: 20px 0;
 }
 .skill-group > span {
-    margin: 0 30px 30px;
+    margin: 30px;
     color: var(--font-color);
     font-family: 'titi';
     font-size: 35px;
@@ -360,11 +360,68 @@ footer {
 }
 
 @media screen and (max-width:1180px) {
+    .sidebar {
+        height: 100px;
+        width: 100%;
+        flex-direction: row;
+        z-index: 10;
+    }
+    .position {
+        width: calc(60vw - 100px);
+        height: 50px;
+        writing-mode: horizontal-tb;
+        text-orientation: sideways;
+        font-size: 50px;
+        margin: 25px 50px;
+    }
+    .social-media {
+        width: 40vw;
+        height: 100px;
+        flex-direction: row;
+    }
+    .social-media a img {
+        margin: 25px;
+        width: 50px;
+    }
+
+    .content > div {
+        padding: 0 100px;
+    }
+    
     .presentation {
         flex-direction: column;
         justify-content: center;
     }
     .information {
         width: 100%;
+    }
+    .title {
+        font-size: 60px;
+    }
+    .text {
+        font-size: 25px;
+    }
+    .blocks {
+        height: 202.4px;
+    }
+    .blocks:before, .blocks:after {
+        height: 80px;
+    }
+
+    div.skills {
+        padding-bottom: 100px;
+    }
+
+    div.timeline {
+        margin: 100px 0;
+    }
+    .date-left, .date-right {
+        font-size: 25px;
+    }
+    .project-title {
+        font-size: 30px;
+    }
+    .project-description {
+        font-size: 25px;
     }
 }
